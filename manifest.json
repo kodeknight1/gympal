@@ -1,0 +1,11 @@
+{
+    "name": "GymPal",
+    "icons": [
+      {
+        "src": "next.svg",
+        "type": "image/svg",
+        "sizes": "512x512"
+      }
+    ]
+  }
+  
