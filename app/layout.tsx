@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import BottomNav from "./ui/nav/bottom-nav";
+import Logo from "@/app/logo";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,9 @@ export const metadata: Metadata = {
     template: APP_TITLE_TEMPLATE,
   },
   description: APP_DESCRIPTION,
+  icons: {
+    icon: 'favicon.png', // /public path
+  },
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
@@ -56,7 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="text-2xl p-4 border-b">GymPal</div>
+        <div className="text-2xl p-4 border-b dark:border-slate-800"><Logo/></div>
         {children}
         <BottomNav />
       </body>
