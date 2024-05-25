@@ -10,5 +10,7 @@ const withPWA = withPWAInit({
 });
 
 export default withPWA({
-  // Your Next.js config
+  env: {
+    APP_URI: process.env.APP_URI,
+  },
 });
