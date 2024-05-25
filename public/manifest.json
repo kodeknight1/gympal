@@ -7,8 +7,8 @@
       "sizes": "256x256"
     }
   ],
-  "theme_color": "#E6002C",
-  "background_color": "F2DDFF",
+  "theme_color": "#F2DDFF",
+  "background_color": "#F2DDFF",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait"
