@@ -30,7 +30,9 @@ export default async function Home({ params }) {
   };
 
   const data = await getPlans();
-  const plans = data.plans;
+
+  let plans = [];
+  if (data) plans = data.plans;
 
   return (
     <>
