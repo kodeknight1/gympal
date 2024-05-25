@@ -61,12 +61,13 @@ const EditPlanForm = ({ plan }) => {
         className="flex flex-col gap-3 max-w-lg w-full "
       >
         <h3>{EDITMODE ? "Update Your Plan" : "Create New Plan"}</h3>
-        <label>Title</label>
         <input
           id="name"
           name="name"
           type="text"
+          className="p-3 border"
           onChange={handleChange}
+          placeholder="Plan name"
           required={true}
           value={formData.name}
         />
