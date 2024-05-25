@@ -1,16 +1,15 @@
 {
-    "name": "GymPal",
-    "icons": [
-      {
-        "src": "favicon.png",
-        "type": "image/png",
-        "sizes": "256x256"
-      }
-    ],
-    "theme_color": "#E6002C",
-    "background_color": "#ED6D00",
-    "start_url": "/",
-    "display": "standalone",
-    "orientation": "portrait"
+  "name": "GymPal",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    }
+  ],
+  "theme_color": "#E6002C",
+  "background_color": "F2DDFF",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
 }
-  

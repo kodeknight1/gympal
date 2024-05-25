@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import BottomNav from "./ui/nav/bottom-nav";
-import Logo from "@/app/logo";
+import Logo from "@/app/ui/logo";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   description: APP_DESCRIPTION,
   icons: {
-    icon: 'favicon.png', // /public path
+    icon: "favicon.png", // /public path
   },
   manifest: "/manifest.json",
   appleWebApp: {
@@ -60,8 +60,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="text-2xl p-4 border-b dark:border-slate-800"><Logo/></div>
-        {children}
+        <div className="text-2xl p-4 border-b dark:border-slate-800">
+          <Logo />
+        </div>
+        <main className="flex min-h-screen flex-col items-center gap-6 py-24 px-4 lg:px-24">
+          {children}
+        </main>
         <BottomNav />
       </body>
     </html>
