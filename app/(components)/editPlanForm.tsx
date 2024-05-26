@@ -49,6 +49,7 @@ const EditPlanForm = ({ plan }) => {
       }
     }
 
+    setFormData({ name: "" });
     router.push("/");
     router.refresh();
   };
