@@ -14,7 +14,7 @@ export const getPlans = async () => {
   }
 };
 
-export const getPlanById = async (id) => {
+export const getPlanById = async (id: string) => {
   try {
     const res = await fetch(`${process.env.APP_URI}/api/Plans/${id}`, {
       cache: "no-store",
@@ -30,7 +30,7 @@ export const getPlanById = async (id) => {
   }
 };
 
-export const deletePlan = async (id) => {
+export const deletePlan = async (id: string) => {
   const res = await fetch(`${process.env.APP_URI}/api/Plans/${id}`, {
     method: "DELETE",
   });
@@ -38,5 +38,21 @@ export const deletePlan = async (id) => {
     throw new Error("Failed to delete plan.");
   } else {
     return true;
+  }
+};
+
+export const getExercises = async () => {
+  try {
+    const res = await fetch(`${process.env.APP_URI}/api/Exercises`, {
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch exercises.");
+    }
+
+    return res.json();
+  } catch (error) {
+    console.log("Error loading exercises");
   }
 };

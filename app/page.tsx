@@ -1,6 +1,7 @@
 import Link from "next/link";
 import EditPlanForm from "./(components)/editPlanForm";
 import EditWorkoutForm from "./(components)/editWorkoutForm";
+import { Plan } from "./lib/definitions";
 
 const getPlans = async () => {
   try {
@@ -18,7 +19,7 @@ const getPlans = async () => {
   }
 };
 
-export default async function Home({ params }) {
+export default async function Home({ params }: { params: { id: string } }) {
   const EDITMODE = params.id === "new" ? false : true;
 
   let workoutData = {
@@ -39,7 +40,7 @@ export default async function Home({ params }) {
       {/* <EditWorkoutForm workout={workoutData} /> */}
 
       <div className="flex flex-col w-full">
-        {plans.map((plan) => (
+        {plans.map((plan: Plan) => (
           <div key={plan._id} className="p-6 border-b">
             <Link href={`/plan/${plan._id}/view`}>{plan.name}</Link>
           </div>

@@ -2,7 +2,11 @@ import BtnDeletePlan from "@/app/(components)/BtnDeletePlan";
 import { getPlanById } from "@/app/lib/data";
 import { deletePlan } from "@/app/lib/data";
 
-export default async function Plan({ params }) {
+type Params = {
+  id: string;
+};
+
+export default async function Plan({ params }: { params: Params }) {
   const planData = await getPlanById(params.id);
 
   const plan = planData.foundPlan;
