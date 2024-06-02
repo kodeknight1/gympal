@@ -1,23 +1,22 @@
-import Link from "next/link";
-import EditExerciseForm from "@/app/(components)/editExerciseForm";
-import { getExerciseById, getExercises } from "@/app/lib/data";
-import { Exercise } from "@/app/lib/definitions";
+import { getWorkoutById } from "@/app/lib/data";
+import { Workout } from "@/app/lib/definitions";
 import { notFound } from "next/navigation";
 
 type Params = {
   id: string;
 };
 
-export default async function Exercises({ params }: { params: Params }) {
-  let data = await getExerciseById(params.id);
+export default async function Workouts({ params }: { params: Params }) {
+  let data = await getWorkoutById(params.id);
 
-  if (!data || !data.foundExercise) notFound();
+  if (!data || !data.foundWorkout) notFound();
 
-  let exercise = data.foundExercise;
+  let workout: Workout = data.foundWorkout;
+  console.log(workout);
 
   return (
     <>
-      <h2>{exercise.name}</h2>
+      <h2>{workout.name}</h2>
     </>
   );
 }

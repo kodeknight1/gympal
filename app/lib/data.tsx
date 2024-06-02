@@ -74,3 +74,34 @@ export const getExerciseById = async (id: string) => {
     console.log("Error loading exercise");
   }
 };
+
+export const getWorkouts = async () => {
+  const res = await fetch(`${process.env.APP_URI}/api/Workouts`, {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to delete plan.");
+  }
+
+  const data = await res.json();
+  return data?.workouts ? data.workouts : [];
+};
+
+export const getWorkoutById = async (id: string) => {
+  try {
+    const res = await fetch(`${process.env.APP_URI}/api/Workouts/${id}`, {
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch workout.");
+    }
+
+    const result = await res.json();
+
+    return result;
+  } catch (error) {
+    console.log("Error loading workout");
+  }
+};

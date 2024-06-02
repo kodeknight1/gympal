@@ -1,24 +1,21 @@
 import Link from "next/link";
-import EditExerciseForm from "@/app/(components)/editExerciseForm";
-import { getExercises } from "@/app/lib/data";
-import { Exercise } from "@/app/lib/definitions";
-import Button from "../(components)/Button";
+import { getWorkouts } from "@/app/lib/data";
+import { Workout } from "@/app/lib/definitions";
+import Button from "@/app/(components)/Button";
 
 type Params = {
   id: string;
 };
 
-export default async function Exercises() {
-  const data = await getExercises();
-
-  const exercises = data?.exercises ? data.exercises : [];
+export default async function Workouts() {
+  const workouts = await getWorkouts();
 
   return (
     <>
       <div className="flex flex-col w-full">
-        {exercises.map((excercise: Exercise) => (
-          <div key={excercise._id} className="p-6 border-b">
-            <Link href={`/exercises/${excercise._id}/`}>{excercise.name}</Link>
+        {workouts.map((workout: Workout) => (
+          <div key={workout._id} className="p-6 border-b">
+            <Link href={`/workouts/${workout._id}/view`}>{workout.name}</Link>
           </div>
         ))}
       </div>

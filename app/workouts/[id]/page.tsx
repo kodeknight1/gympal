@@ -1,6 +1,6 @@
 import Link from "next/link";
 import EditExerciseForm from "@/app/(components)/editExerciseForm";
-import { getExerciseById, getExercises } from "@/app/lib/data";
+import { getExerciseById } from "@/app/lib/data";
 import { Exercise } from "@/app/lib/definitions";
 import { notFound } from "next/navigation";
 
