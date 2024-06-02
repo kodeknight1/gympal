@@ -11,10 +11,12 @@ type Params = {
 export default async function Exercises() {
   const data = await getExercises();
 
+  const exercises = data?.exercises ? data.exercises : [];
+
   return (
     <>
       <div className="flex flex-col w-full">
-        {data.exercises.map((excercise: Exercise) => (
+        {exercises.map((excercise: Exercise) => (
           <div key={excercise._id} className="p-6 border-b">
             <Link href={`/exercises/${excercise._id}/`}>{excercise.name}</Link>
           </div>

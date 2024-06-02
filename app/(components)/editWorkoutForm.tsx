@@ -1,8 +1,9 @@
 "use client";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { Workout } from "@/app/lib/definitions";
 
-const EditWorkoutForm = ({ workout }) => {
+const EditWorkoutForm = ({ workout }: { workout: Workout }) => {
   const EDITMODE = workout._id === "new" ? false : true;
   const router = useRouter();
   const startingWorkoutData = {
@@ -25,7 +26,7 @@ const EditWorkoutForm = ({ workout }) => {
 
   const [formData, setFormData] = useState(startingWorkoutData);
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     const value = e.target.value;
     const name = e.target.name;
 
@@ -35,7 +36,7 @@ const EditWorkoutForm = ({ workout }) => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     if (EDITMODE) {

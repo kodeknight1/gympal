@@ -1,7 +1,7 @@
 import Link from "next/link";
 import EditPlanForm from "./(components)/editPlanForm";
 import EditWorkoutForm from "./(components)/editWorkoutForm";
-import { Plan } from "./lib/definitions";
+import { Plan } from "@/app/lib/definitions";
 
 const getPlans = async () => {
   try {
@@ -26,8 +26,9 @@ export default async function Home({ params }: { params: { id: string } }) {
     _id: "new",
   };
 
-  let planData = {
+  let planData: Plan = {
     _id: "new",
+    name: "",
   };
 
   const data = await getPlans();
@@ -37,8 +38,6 @@ export default async function Home({ params }: { params: { id: string } }) {
 
   return (
     <>
-      {/* <EditWorkoutForm workout={workoutData} /> */}
-
       <div className="flex flex-col w-full">
         {plans.map((plan: Plan) => (
           <div key={plan._id} className="p-6 border-b">

@@ -1,8 +1,9 @@
 "use client";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { Plan } from "@/app/lib/definitions";
 
-const EditPlanForm = ({ plan }) => {
+const EditPlanForm = ({ plan }: { plan: Plan }) => {
   const EDITMODE = plan._id === "new" ? false : true;
   const router = useRouter();
   const startingPlanData = { name: "" };
@@ -13,7 +14,7 @@ const EditPlanForm = ({ plan }) => {
 
   const [formData, setFormData] = useState(startingPlanData);
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     const value = e.target.value;
     const name = e.target.name;
 
@@ -23,7 +24,7 @@ const EditPlanForm = ({ plan }) => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     if (EDITMODE) {
