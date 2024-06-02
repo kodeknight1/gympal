@@ -2,7 +2,13 @@
 import { deletePlan } from "@/app/lib/data";
 import { useRouter } from "next/navigation";
 
-export default function BtnDeletePlan({ planId, redirectTo = "/" }) {
+export default function BtnDeletePlan({
+  planId,
+  redirectTo = "/",
+}: {
+  planId: string;
+  redirectTo?: string;
+}) {
   const router = useRouter();
 
   const deleteThisPlan = async () => {

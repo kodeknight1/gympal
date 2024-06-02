@@ -56,3 +56,21 @@ export const getExercises = async () => {
     console.log("Error loading exercises");
   }
 };
+
+export const getExerciseById = async (id: string) => {
+  try {
+    const res = await fetch(`${process.env.APP_URI}/api/Exercises/${id}`, {
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch exercise.");
+    }
+
+    const result = await res.json();
+
+    return result;
+  } catch (error) {
+    console.log("Error loading exercise");
+  }
+};
