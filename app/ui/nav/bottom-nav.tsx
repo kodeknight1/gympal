@@ -10,9 +10,24 @@ export default function BottomNav() {
         </Link>
       </button>
 
-      <button>
-        <EllipsisVerticalIcon className="size-6" />
-      </button>
+      <div>
+        <details className="w-full flex dropdown dropdown-top">
+          <ul className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+            <li>
+              <Link href="/exercises">Exercises</Link>
+            </li>
+            <li>
+              <Link href="/workouts">Workouts</Link>
+            </li>
+            <li>
+              <Link href="/plans">Plans</Link>
+            </li>
+          </ul>
+          <summary className="btn border-0 bg-transparent">
+            <EllipsisVerticalIcon className="size-6" />
+          </summary>
+        </details>
+      </div>
     </div>
   );
 }
